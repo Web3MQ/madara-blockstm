@@ -26,7 +26,7 @@ Memory: 16 GB
 
 # Quick Start
 We provide some precompiled programs and testing tools for those interested in testing the performance of Substrate BlockSTM.
-You can find these binary files in the release section of the current repository.
+You can find these binary files in the [release section](https://github.com/Web3MQ/madara-blockstm/releases/tag/v0.0.1) of the current repository.
 
 ## Run BlockChain Node
 The command to run BlockSTM executor node:
