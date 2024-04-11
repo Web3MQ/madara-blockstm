@@ -2,6 +2,8 @@
 We have developed a parallel transaction executor based on substrate. It is designed to replace the native substrate serial executor.
 Below, We will provide the benchmarking process and offer some analysis. Finally, We will provide precompiled binary executable files to facilitate benchmarking locally.
 
+**We've already integrated this solution into Madara. It will be released soon.**
+
 # Benchmark 
 The benchmark strategy for this session involves testing the `transfer_allow_death` transactions within the Balance module of Substrate.
 
