@@ -40,10 +40,10 @@ When using the BlockSTM parallel executor with only 2 threads. Below are the res
 When using the BlockSTM parallel executor with only 4 threads. Below are the results of our benchmark:
 | | Duration(s) | Transaction Count| TPS|
 |---|---|---|---|
-| 1 | 14 | 66000 | 5333.33 |
-| 2 | 14 | 66000 | 5333.33 |
-| 3 | 14 | 66000 | 5333.33 |
-| Avg | 14 | 100000 | 5333.33 |
+| 1 | 15 | 80000 | 5333.33 |
+| 2 | 15 | 80000 | 5333.33 |
+| 3 | 15 | 80000 | 5333.33 |
+| Avg | 15 | 80000 | 5333.33 |
 
 ### Comparing TPS
 The table below compares the TPS of various executors.
