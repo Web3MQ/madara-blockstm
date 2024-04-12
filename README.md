@@ -9,7 +9,7 @@ The benchmark strategy for this session involves testing the `transfer_allow_dea
 
 We will generate N sender accounts and N receiver accounts. For each pair of sender and receiver, we will create one `transfer_allow_death` transaction. This process will result in N transactions in total.
 
-## Benchmark Machine:
+## Benchmark Machine
 ```
 Machine Name：MacBook Pro
 Chip: Apple M2 Pro
@@ -18,6 +18,31 @@ Memory: 16 GB
 ```
 
 ## Benchmark Report
+### Native Serial Executor
+The native transaction executor of Substrate is serial. Below are the results of our benchmark:
+| | Duration(s) | Transaction Count| TPS|
+|---|---|---|---|
+| 1 | 105 | 100000 | 952.38 |
+| 2 | 105 | 100000 | 952.38 |
+| 3 | 105 | 100000 | 952.38 |
+| Avg | 105 | 100000 | 952.38 |
+
+### 2-Threaded BlockSTM
+When using the BlockSTM parallel executor with only 2 cores. Below are the results of our benchmark:
+| | Duration(s) | Transaction Count| TPS|
+|---|---|---|---|
+| 1 | 14 | 66000 | 4714.28 |
+| 2 | 14 | 66000 | 4714.28 |
+| 3 | 14 | 66000 | 4714.28 |
+| Avg | 105 | 100000 | 4714.28 |
+
+| Executor | TPS | Factor|
+|---|---|---|
+| Substrate | 952.38 | 1.0 |
+| 2ThreadBlockSTM | 4714.28 | 4.94 | 
+| 4ThreadBlockSTM | 5333.33 | 5.6  |
+
+
 | Executor | Speed (tx/s) |
 |---|---|
 | Substrate | 3703 |
