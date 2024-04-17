@@ -9,7 +9,7 @@ The benchmarking strategy for Madara in this session is as follows:
 1. Deploy an ERC20 token.
 2. Deploy N accounts.
 3. Recharge transaction fees and ERC20 balances to the deployed N accounts.
-4. Build N transactions using N accounts, where each account transfers funds to an address calculated using N+1 Salt. This ensures that each transaction is unrelated.
+4. Build N transactions using N accounts, where each account transfers funds to an address calculated using N+1 salt. This ensures that each transaction is unrelated.
 5. Send the built transactions and record the time taken for all transactions to be included in a block.
 
 ## Madara BlockSTM Benchmark Machine
@@ -51,7 +51,7 @@ We can observe in the node logs during benchmark:
 🎁 Prepared block for proposing at 9730 (1970 ms) [hash: 0x07a3cf9b154d9ba978fa26843f132bb4fc4a32ca7e14a9561cdd148df6b27b46; parent_hash: 0xc352…414b; ⚡️⚡️⚡️extrinsics (952)    
 ```
 This indicates that, with the 2 threaded blockSTM executor, it took 1970ms for 952 transactions.
-Therefore, we can conclude that the processing speed of the native serial processor is 2.06ms/Tx.
+Therefore, we can conclude that the processing speed of the 2-threaded blockSTM executor is 2.06ms/Tx.
 
 ### 4-Threaded BlockSTM
 When using the BlockSTM parallel executor with only 4 threads. Below are the results of our benchmark:
@@ -67,7 +67,7 @@ We can observe in the node logs:
 🎁 Prepared block for proposing at 9850 (999 ms) [hash: 0xbb3a836dc1bcc5902239d664a725a0ca0ec50e87940a86e2df4fa4cdd0306c6d; parent_hash: 0x1ded…a7d6; ⚡️⚡️⚡️extrinsics (994)    
 ```
 This indicates that, with the 4-threaded blockSTM executor, it took 999ms for 994 transactions.
-Therefore, we can conclude that the processing speed of the native serial processor is 1ms/Tx.
+Therefore, we can conclude that the processing speed of the 4-threaded blockSTM executor is 1ms/Tx.
 
 ### Comparing TPS
 The table below compares the TPS of various executors.
